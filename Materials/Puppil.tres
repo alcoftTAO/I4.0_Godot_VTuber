@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://y8pi7shy2h30"]
+
+[ext_resource type="Texture2D" uid="uid://b7v8vwtvwsm40" path="res://Textures/I4_0 Parts/I4_PUPPILS.png" id="1_aumea"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_aumea")
+metallic_specular = 1.0
+emission_enabled = true

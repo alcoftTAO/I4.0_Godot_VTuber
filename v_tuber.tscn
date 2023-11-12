@@ -1,0 +1,615 @@
+[gd_scene load_steps=38 format=3 uid="uid://ngvar76vlag6"]
+
+[ext_resource type="Script" path="res://Scripts/ConnectionManager.gd" id="1_o04su"]
+[ext_resource type="Material" uid="uid://k00nj38tl20i" path="res://Materials/Body.tres" id="1_rvad2"]
+[ext_resource type="Script" path="res://Scripts/ObjectsManager.gd" id="2_af0co"]
+[ext_resource type="Material" uid="uid://el107mvhjrs2" path="res://Materials/Neck.tres" id="2_nkabk"]
+[ext_resource type="Material" uid="uid://dqn18vepbcg0u" path="res://Materials/Eye Angry.tres" id="3_4x3kn"]
+[ext_resource type="Material" uid="uid://cxhb4yic4px55" path="res://Materials/Head.tres" id="3_5wtx4"]
+[ext_resource type="Material" uid="uid://rjpovkhcquu3" path="res://Materials/BG.tres" id="4_0cy6a"]
+[ext_resource type="Material" uid="uid://0fuh6gjq1e52" path="res://Materials/Eye Sad.tres" id="4_fv40f"]
+[ext_resource type="Material" uid="uid://y8pi7shy2h30" path="res://Materials/Puppil.tres" id="5_2jw84"]
+[ext_resource type="Material" uid="uid://fe2d7uo2fysq" path="res://Materials/Eye Happy.tres" id="5_rax4s"]
+[ext_resource type="Material" uid="uid://cdlkbj05moe3o" path="res://Materials/Hair_1.tres" id="6_xumnc"]
+[ext_resource type="Material" uid="uid://hpbvm6ru4rhe" path="res://Materials/Hair_2.tres" id="7_p6h50"]
+[ext_resource type="Material" uid="uid://2p6brg0i1dcl" path="res://Materials/Loading.tres" id="8_1mlpo"]
+[ext_resource type="Material" uid="uid://pak2lrtxfc8t" path="res://Materials/Eye Neutral.tres" id="8_bnt2c"]
+[ext_resource type="Script" path="res://Scripts/RepeatAnim.gd" id="9_us33m"]
+[ext_resource type="Material" uid="uid://bahayfbq6dm7d" path="res://Materials/Chair.tres" id="10_ubnhc"]
+[ext_resource type="Material" uid="uid://thgradu48sur" path="res://Materials/Microphone.tres" id="14_db5mq"]
+
+[sub_resource type="Environment" id="Environment_tmgen"]
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_hyonh"]
+auto_exposure_scale = 0.25
+auto_exposure_max_sensitivity = 8000.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_al8ih"]
+font_size = 26
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yf6il"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7x43q"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jphet"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ngylk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_cab6w"]
+
+[sub_resource type="Animation" id="Animation_cuoxy"]
+resource_name = "Loading"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_1r81x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7n30b"]
+_data = {
+"Loading": SubResource("Animation_cuoxy"),
+"RESET": SubResource("Animation_1r81x")
+}
+
+[sub_resource type="QuadMesh" id="QuadMesh_7p6tf"]
+
+[sub_resource type="Animation" id="Animation_r0y7g"]
+resource_name = "Idle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Neck/Head/Hair_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.0872665), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Neck/Head/Hair_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.0261799), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yeis6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Neck/Head/Hair_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Neck/Head/Hair_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Microphone:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/Neck/Head/Eye:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Body/Neck/Head/Eye/Puppil:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.125, 0.015, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body/Neck/Head/Eye/Puppil2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.135407, 0.015, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vm3gi"]
+resource_name = "Reading Chat"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body/Neck/Head/Eye:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1, 0.125, 0.3, 0.325, 0.4, 0.425),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 0, 1), Vector3(1, 0, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 0, 1), Vector3(1, 0, 1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body/Neck/Head/Eye/Puppil:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1, 0.325, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.125, 0.015, 0), Vector3(-0.125, 0.015, 0), Vector3(-0.160562, 0.0150001, 0), Vector3(-0.160562, 0.0150001, 0), Vector3(-0.125, 0.015, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body/Neck/Head/Eye/Puppil2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1, 0.325, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.135407, 0.015, 0), Vector3(0.135407, 0.015, 0), Vector3(0.0998452, 0.0150001, 0), Vector3(0.0998452, 0.0150001, 0), Vector3(0.135, 0.015, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fsrua"]
+resource_name = "Singing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Microphone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -3, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_egonp"]
+_data = {
+"Idle": SubResource("Animation_r0y7g"),
+"RESET": SubResource("Animation_yeis6"),
+"Reading Chat": SubResource("Animation_vm3gi"),
+"Singing": SubResource("Animation_fsrua")
+}
+
+[sub_resource type="Animation" id="Animation_dwkys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lights/SpotLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lights/SpotLight3D2:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lights/SpotLight3D3:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lights/SpotLight3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.523599, 0.523599, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lights/SpotLight3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.523599, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lights/SpotLight3D3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.523599, -0.523599, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ufv50"]
+resource_name = "Singing"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lights/SpotLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lights/SpotLight3D2:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 0, 1), Color(0, 0, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lights/SpotLight3D3:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lights/SpotLight3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.523599, 0.523599, 0), Vector3(-0.523599, 0, 0), Vector3(-0.523599, -0.523599, 0), Vector3(-0.523599, 0.523599, 1.72064e-08)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lights/SpotLight3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.523599, 0, 0), Vector3(-0.523599, -0.523599, 0), Vector3(-0.523599, 0.523599, 0), Vector3(-0.523599, -1.36416e-07, 3.44128e-08)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lights/SpotLight3D3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.523599, -0.523599, 0), Vector3(-0.523599, 0.523598, 3.37501e-09), Vector3(-0.523599, -4.1892e-07, 3.37501e-09), Vector3(-0.523599, -0.523599, 3.375e-09)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v7iom"]
+_data = {
+"RESET": SubResource("Animation_dwkys"),
+"Singing": SubResource("Animation_ufv50")
+}
+
+[node name="VTuber" type="Node3D"]
+
+[node name="ConnectionManager" type="Node3D" parent="." node_paths=PackedStringArray("ObjsManager")]
+script = ExtResource("1_o04su")
+ObjsManager = NodePath("ObjsManager")
+
+[node name="ObjsManager" type="Node3D" parent="ConnectionManager" node_paths=PackedStringArray("Captions", "Loading", "Eyes", "I4Anim", "SceneAnim")]
+script = ExtResource("2_af0co")
+Captions = NodePath("../../Camera3D/UI/Captions")
+Loading = NodePath("../../I4_0/Body/Neck/Head/Loading")
+Eyes = NodePath("../../I4_0/Body/Neck/Head/Eye/MeshInstance3D")
+I4Anim = NodePath("../../I4_0/AnimationPlayer")
+SceneAnim = NodePath("../../AnimationPlayer")
+Emotions = {
+0: ExtResource("3_4x3kn"),
+1: ExtResource("4_fv40f"),
+4: ExtResource("5_rax4s")
+}
+NeutralEmotionMaterial = ExtResource("8_bnt2c")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tmgen")
+camera_attributes = SubResource("CameraAttributesPractical_hyonh")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 3)
+current = true
+fov = 60.0
+near = 0.001
+far = 5.0
+
+[node name="UI" type="Control" parent="Camera3D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Captions" type="Label" parent="Camera3D/UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -248.0
+offset_right = -27.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_al8ih")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+clip_text = true
+text_overrun_behavior = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 5, 0)
+visible = false
+light_energy = 0.5
+light_indirect_energy = 0.5
+shadow_enabled = true
+
+[node name="BG" type="Node3D" parent="."]
+
+[node name="Chair" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.175, 2.5, -0.02)
+material_override = ExtResource("10_ubnhc")
+mesh = SubResource("QuadMesh_yf6il")
+
+[node name="BG" type="MeshInstance3D" parent="BG"]
+transform = Transform3D(12, 0, 0, 0, 8, 0, 0, 0, 8, 0, 2, -2)
+material_override = ExtResource("4_0cy6a")
+mesh = SubResource("QuadMesh_7x43q")
+
+[node name="I4_0" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+
+[node name="Body" type="Node3D" parent="I4_0"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.1, 0)
+material_override = ExtResource("1_rvad2")
+mesh = SubResource("QuadMesh_jphet")
+
+[node name="Neck" type="Node3D" parent="I4_0/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, 1.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck"]
+transform = Transform3D(0.35, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+material_override = ExtResource("2_nkabk")
+mesh = SubResource("QuadMesh_ngylk")
+
+[node name="Head" type="Node3D" parent="I4_0/Body/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015, 0.55, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head"]
+transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
+material_override = ExtResource("3_5wtx4")
+mesh = SubResource("QuadMesh_ngylk")
+
+[node name="Eye" type="Node3D" parent="I4_0/Body/Neck/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head/Eye"]
+transform = Transform3D(0.5, 0, 0, 0, 0.375, 0, 0, 0, 0.5, 0, 0, 0.03)
+material_override = ExtResource("8_bnt2c")
+mesh = SubResource("QuadMesh_cab6w")
+
+[node name="Puppil" type="Node3D" parent="I4_0/Body/Neck/Head/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, 0.015, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head/Eye/Puppil"]
+transform = Transform3D(0.1, 0, 0, 0, 0.167, 0, 0, 0, 0.167, 0, 0, 0.04)
+material_override = ExtResource("5_2jw84")
+mesh = SubResource("QuadMesh_cab6w")
+
+[node name="Puppil2" type="Node3D" parent="I4_0/Body/Neck/Head/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.135407, 0.015, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head/Eye/Puppil2"]
+transform = Transform3D(0.1, 0, 0, 0, 0.167, 0, 0, 0, 0.167, 0, 0, 0.04)
+material_override = ExtResource("5_2jw84")
+mesh = SubResource("QuadMesh_cab6w")
+
+[node name="Hair_1" type="Node3D" parent="I4_0/Body/Neck/Head"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head/Hair_1"]
+transform = Transform3D(1.25, 0, 0, 0, 1.375, 0, 0, 0, 1.25, 0, 0, -0.01)
+material_override = ExtResource("6_xumnc")
+mesh = SubResource("QuadMesh_ngylk")
+
+[node name="Hair_2" type="Node3D" parent="I4_0/Body/Neck/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, 0.425, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head/Hair_2"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.04)
+material_override = ExtResource("7_p6h50")
+mesh = SubResource("QuadMesh_ngylk")
+
+[node name="Loading" type="Node3D" parent="I4_0/Body/Neck/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Body/Neck/Head/Loading"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0.03)
+material_override = ExtResource("8_1mlpo")
+mesh = SubResource("QuadMesh_cab6w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="I4_0/Body/Neck/Head/Loading"]
+libraries = {
+"": SubResource("AnimationLibrary_7n30b")
+}
+script = ExtResource("9_us33m")
+Anim = "Loading"
+
+[node name="Microphone" type="Node3D" parent="I4_0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="I4_0/Microphone"]
+transform = Transform3D(3.5, 0, 0, 0, 2.5, 0, 0, 0, 1, 0, 0.5, 0.06)
+material_override = ExtResource("14_db5mq")
+mesh = SubResource("QuadMesh_7p6tf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="I4_0"]
+libraries = {
+"": SubResource("AnimationLibrary_egonp")
+}
+script = ExtResource("9_us33m")
+Anim = "Idle"
+
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 0, 0)
+light_energy = 7.5
+light_indirect_energy = 7.5
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+light_energy = 7.5
+light_indirect_energy = 7.5
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 0, 0)
+light_energy = 7.5
+light_indirect_energy = 7.5
+shadow_enabled = true
+spot_range = 10.0
+spot_angle = 30.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v7iom")
+}
+script = ExtResource("9_us33m")
+Anim = "Singing"
+Enabled = false

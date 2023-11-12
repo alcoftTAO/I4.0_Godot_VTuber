@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://el107mvhjrs2"]
+
+[ext_resource type="Texture2D" uid="uid://yrsoim82cop1" path="res://Textures/I4_0 Parts/I4_NECK.png" id="1_4mkro"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_4mkro")

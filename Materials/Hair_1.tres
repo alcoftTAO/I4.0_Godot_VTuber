@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cdlkbj05moe3o"]
+
+[ext_resource type="Texture2D" uid="uid://dlcw1crm0akhb" path="res://Textures/I4_0 Parts/I4_HAIR_1.png" id="1_5ev5u"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_5ev5u")
+metallic_specular = 0.0

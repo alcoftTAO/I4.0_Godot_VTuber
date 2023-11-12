@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://k00nj38tl20i"]
+
+[ext_resource type="Texture2D" uid="uid://x5b7r3iuvnga" path="res://Textures/I4_0 Parts/I4_BODY.png" id="1_qnvc8"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.675
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_qnvc8")
+metallic_specular = 0.0
